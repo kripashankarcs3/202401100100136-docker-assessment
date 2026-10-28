@@ -21,7 +21,12 @@ docker compose up -d
 
 ## AI tools used
 
-- Claude Code (Anthropic): helped write the Dockerfile, `.dockerignore`, `compose.yaml`, `.env.example`, `.gitignore` and this README; fixed the indentation of the starter code copied from the PDF; suggested the library upgrades and base image for Stage 3; explained the Trivy and cosign output. I ran the evidence commands and took the screenshots myself.
+- Claude Code (Anthropic): helped write the Dockerfile, `.dockerignore`, `compose.yaml`, `.env.example`, `.gitignore` and this README; fixed the indentation of the starter code copied from the PDF; suggested the library upgrades and base image for Stage 3 and test-built them; explained the Trivy and cosign output; checked my screenshots, and made the stage commits and the push on my instruction. I ran the evidence commands, generated the cosign key with my own password and took the screenshots myself.
+
+## Notes for marking
+
+- Stage 1 asks for a `python:3.9` Dockerfile; Stage 3 replaces it. The original is in the `Stage 1 done` commit (`git show 3e54bef:backend/Dockerfile`).
+- Where one piece of evidence did not fit one screen it is split into two files, e.g. `S1-2a.png` and `S1-2b.png`.
 
 ## Docker Hub digest
 
@@ -42,7 +47,7 @@ Fixes in 0.2: slim Debian 13 base pinned to Python 3.13.18, Flask 3.1.3 / Werkze
 
 ## Signing
 
-`cosign.pub` is the public key. 1.0.0 is signed by digest and verifies; 1.0.1 was pushed unsigned and `cosign verify` rejects it.
+`cosign.pub` is the public key. 1.0.0 is signed by digest and verifies; 1.0.1 (`sha256:c7e3fbbedf062c4f27e20f2f2f76c4968fef05a18af20a126cd4a657c1b1947e`) was pushed unsigned and `cosign verify` rejects it with "no signatures found".
 
 ## Steps not completed
 
