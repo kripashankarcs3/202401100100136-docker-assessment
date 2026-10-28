@@ -10,6 +10,10 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 COPY app.py .
 
+# Version shown on the page, set at build time: --build-arg APP_VERSION=1.0.0
+ARG APP_VERSION=dev
+ENV APP_VERSION=${APP_VERSION}
+
 # Run as an unprivileged user instead of root
 RUN useradd --create-home --uid 10001 appuser
 USER appuser

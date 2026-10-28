@@ -25,7 +25,9 @@ docker compose up -d
 
 ## Docker Hub digest
 
-`kripashankar3/fest-backend:1.0.0` → `TODO`
+`kripashankar3/fest-backend:1.0.0` → `sha256:87b5decad777e573e5184a02eaf49aedf491f5a02e9c74f9196c52c0188406d0`
+
+This is the image index digest printed by `docker push` (and the one signed in Stage 5). The Tags page on Docker Hub lists the linux/amd64 manifest inside it, `sha256:0e0a7d7073ae…`.
 
 ## Trivy: before and after (Stage 3)
 

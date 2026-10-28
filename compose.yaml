@@ -16,7 +16,7 @@ services:
       - backnet
 
   backend:
-    build: ./backend
+    image: kripashankar3/fest-backend:1.0.0
     environment:
       DB_HOST: db
       DB_NAME: festpass
