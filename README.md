@@ -31,8 +31,10 @@ docker compose up -d
 
 | Image | Base | CRITICAL | HIGH | Size |
 |---|---|---|---|---|
-| fest-backend:0.1 | python:3.9 | TODO | TODO | TODO |
-| fest-backend:0.2 | python:3.13-slim | TODO | TODO | TODO |
+| fest-backend:0.1 | python:3.9 | 234 | 2249 | 1.61 GB |
+| fest-backend:0.2 | python:3.13.18-slim | 0 | 44 | 207 MB |
+
+Fixes in 0.2: slim Debian 13 base pinned to Python 3.13.18, Flask 3.1.3 / Werkzeug 3.1.9 / psycopg2-binary 2.9.13, runs as non-root `appuser`, and pip/setuptools are removed after install (their vendored copies of msgpack and urllib3 had fixable HIGH CVEs). The 44 HIGH left are Debian OS packages with no fix released yet; `trivy image --ignore-unfixed fest-backend:0.2` reports 0.
 
 `trivy image --severity CRITICAL --ignore-unfixed --exit-code 1 fest-backend:0.2` exits with code 0.
 
